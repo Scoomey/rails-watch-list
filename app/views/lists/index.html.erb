@@ -4,13 +4,21 @@
       <h1>Movie Watch List!</h1>
     </div>
   </div>
-<%= cl_image_tag("sample", width: 400, height: 300, crop: :fill) %>
+
 
   <div class="container">
     <h2>Lists</h2>
   <% @lists.each do |list| %>
-  <p><%= link_to list.name, list_path(list), class: 'text-decoration-none text-light'%></p>
-  <%end  %>
+  <div class="m-2">
+  <%= link_to list_path(list) do %>
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :scale %>')">
+  <%= list.name%>
+  </div>
+  <% end%>
+
+  </div>
+  <% end  %>
+
 
     <div class="btn btn-secondary">
     <%= link_to 'Make a new list', new_list_path, class: 'text-decoration-none text-light' %>
