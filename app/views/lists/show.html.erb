@@ -1,0 +1,28 @@
+  <div class="container">
+<h1 class="list-title"><%= @list.name %></h1>
+<div class="d-flex">
+<% @list.movies.each do |bm| %>
+<div class="card" style="width: 18rem;">
+<%= image_tag bm.poster_url, alt: "movie poster" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= bm.title %></h5>
+    <p class="card-text"  ><%= bm.overview %></p>
+    <p  class="card-text " ;>Rating : <%= bm.rating %></p>
+  </div>
+</div>
+<% end %>
+
+  </div>
+<h2>Watchlist a film</h2>
+<%= simple_form_for [@list, @bookmark = Bookmark.new] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.association :movie %>
+  <%= f.input :comment %>
+  <div class="d-flex justify-content-between">
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<div class="btn btn-secondary"><%= link_to 'Back', lists_path, class: 'text-decoration-none text-light' %></div>
+</div>
+</div>

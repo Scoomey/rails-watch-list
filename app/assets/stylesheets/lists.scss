@@ -1,0 +1,63 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+  body {
+  background-color:  rgb(39,41,43);
+  color: whitesmoke;
+}
+
+.list-title{
+  text-align: center ;
+}
+
+.card-body{
+  background-color:rgb(31, 33, 34)  ;
+  display: flex ;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-control {
+  background-color: rgb(31, 29, 29) ;
+  border-color: rgb(66, 68, 70);
+}
+
+
+.form-control:hover{
+  background-color: rgb(88, 83, 83) ;
+  border-color: rgb(113, 124, 136);
+}
+
+
+.card {
+  border-color: rgb(39,41,43);
+  border-radius: 5px;
+}
+
+img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
